@@ -5,6 +5,7 @@ import WinnerModal from './components/WinnerModal.jsx'
 import GameTypeModal from './components/GameTypeModal.jsx'
 import GameTypeBadge from './components/GameTypeBadge.jsx'
 import { generateAllNumbers, shuffle, getColumnForNumber } from './gameLogic.js'
+import altecLogo from '/altec-logo.png'
 
 const COL_COLORS = {
     B: '#60a5fa', I: '#a78bfa', N: '#fbbf24', G: '#34d399', O: '#fb7185',
@@ -137,7 +138,7 @@ function App() {
                     {/* ALTEC Logo - subtle bottom placement */}
                     <div className="altec-logo-container">
                         <span className="altec-text">Desarrollado por</span>
-                        <img src="/altec-logo.png" alt="ALTEC" className="altec-logo" />
+                        <img src={altecLogo} alt="ALTEC" className="altec-logo" />
                     </div>
                 </div>
             </div>

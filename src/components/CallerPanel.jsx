@@ -1,5 +1,6 @@
 import React from 'react'
 import TombolaAnimation from './TombolaAnimation.jsx'
+import parroquiaLogo from '/logo.jpg'
 
 function CallerPanel({ calledNumbers, bag, onCall, onReset, onBingo }) {
     const lastNum = calledNumbers[calledNumbers.length - 1] ?? null
@@ -8,7 +9,7 @@ function CallerPanel({ calledNumbers, bag, onCall, onReset, onBingo }) {
         <div className="caller-panel">
             {/* Parroquia Logo */}
             <div className="parroquia-logo-container">
-                <img src="/logo.jpg" alt="Parroquia San Isidro Labrador" className="parroquia-logo" />
+                <img src={parroquiaLogo} alt="Parroquia San Isidro Labrador" className="parroquia-logo" />
             </div>
 
             {/* Tombola animation */}
@@ -52,7 +53,7 @@ function CallerPanel({ calledNumbers, bag, onCall, onReset, onBingo }) {
                 <button
                     className="btn btn-danger"
                     onClick={() => window.electronAPI.quitApp()}
-                    style={{ marginTop: 'auto', background: 'transparent', border: '1px solid var(--danger)' }}
+                    style={{ marginTop: 'auto' }}
                 >
                     ❌ Salir del Bingo
                 </button>
