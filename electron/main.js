@@ -1,4 +1,4 @@
-const { app, BrowserWindow } = require('electron')
+const { app, BrowserWindow, ipcMain } = require('electron')
 const path = require('path')
 
 const isDev = !app.isPackaged
@@ -38,6 +38,10 @@ app.whenReady().then(() => {
     app.on('activate', () => {
         if (BrowserWindow.getAllWindows().length === 0) createWindow()
     })
+})
+
+ipcMain.on('quit-app', () => {
+    app.quit()
 })
 
 app.on('window-all-closed', () => {

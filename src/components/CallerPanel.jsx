@@ -45,7 +45,18 @@ function CallerPanel({ calledNumbers, bag, onCall, onReset, onBingo }) {
             </button>
 
             {/* Reset */}
-            <button className="btn btn-danger" onClick={onReset}>🔄 Nueva Partida</button>
+            <button className="btn btn-secondary" onClick={onReset}>🔄 Nueva Partida</button>
+
+            {/* Exit App */}
+            {window.electronAPI && (
+                <button
+                    className="btn btn-danger"
+                    onClick={() => window.electronAPI.quitApp()}
+                    style={{ marginTop: 'auto', background: 'transparent', border: '1px solid var(--danger)' }}
+                >
+                    ❌ Salir del Bingo
+                </button>
+            )}
         </div>
     )
 }
